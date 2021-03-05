@@ -77,6 +77,7 @@ var
 
 procedure TForm1.FormShow(Sender: TObject);
 begin
+//inisialisasi variabel ukuran kanvas dan kordinatnya
   lebar := Image1.Width;
   tinggi := Image1.Height;
   kolomP := lebar div 2;
@@ -88,6 +89,7 @@ end;
 
 procedure TForm1.BtnHapusClick(Sender: TObject);
 begin
+// sama dengan clean screen
   image1.Canvas.Pen.Color:=clWhite;
   image1.Canvas.Pen.Style:=psSolid;
   image1.Canvas.Brush.Color:=clWhite;
