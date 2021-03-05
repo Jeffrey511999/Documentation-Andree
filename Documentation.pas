@@ -109,23 +109,29 @@ var
   i : integer;
   temp : Array[1..5] of limas;
 begin
+  //Mengambil valur dari TForm kedalam variabel rotasi
   rotasi := Round(StrToFloat(TFormRotasi.Text));
+  
+  //Melakukan proses rotasi dengan rumus rotasi
   for i:= 1 To 5 do 
   begin 
     temp[i].x := bangun[i].x;
     bangun[i].x := Round((bangun[i].x * Cos(rotasi*pi/180)) - (bangun[i].y*sin(rotasi*pi/180)));
     bangun[i].y := Round((temp[i].x * Sin(rotasi*pi/180)) + (bangun[i].y*Cos(rotasi*pi/180)));
   end;
-  cleanScreen();
-  BtnGambarClick(NIL);
+  cleanScreen(); //Membersihkan kanvas dari gambar yag sebelumya sudah ada
+  BtnGambarClick(NIL);//Menggambar limas yang sudah di rotasi
 end;
 
 procedure TForm1.BtnScallingClick(Sender: TObject);
 var
   i : integer;
 begin
+  //Mengambil value dari TForm kedalam variabel sx,sy
   sx := Round(StrToFloat(TFormSX.Text));
   sy := Round(StrToFloat(TFormSY.Text));
+  
+  //Melakukan proses scalling dengan mengalikan nilai dari limas dengan nilai scalling sx, sy
     for i:= 1 to 5 do
     begin
       bangun[i].x := Round(bangun[i].x * sx);
