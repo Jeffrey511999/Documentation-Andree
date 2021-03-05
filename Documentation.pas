@@ -56,7 +56,7 @@ implementation
 
 Uses Math;
 
-type
+type //deklarasi record limas dengan variabel x dan y
   limas = Record
     x: integer;
     y: integer;
@@ -80,10 +80,10 @@ begin
 //inisialisasi variabel ukuran kanvas dan kordinatnya
   lebar := Image1.Width;
   tinggi := Image1.Height;
-  kolomP := lebar div 2;
-  barisP := tinggi div 2;
-  BtnHapusClick(NIL);
-  SetVar();
+  kolomP := lebar div 2; // Mendapatkan nilai tengah dari lebar image
+  barisP := tinggi div 2; // Mendapatkan nilai tengah dari tinggi image
+  BtnHapusClick(NIL);//Memanggil fungsi btn hapus untuk menggambar canvas
+  SetVar();//Mengatur nilai variabel ke default yang sudah ditentukan
 end;
 
 
@@ -102,7 +102,7 @@ begin
   image1.Canvas.LineTo(kolomP, tinggi);
   image1.Canvas.MoveTo(0, barisP);
   image1.Canvas.LineTo(lebar, barisP);
-  SetVar();
+  SetVar();// Mengatur nilai variabel ke default agar ketika btn hapus ditekan maka value akan tereset
 end;
 
 procedure TForm1.BtnRotasiClick(Sender: TObject);
